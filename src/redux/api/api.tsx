@@ -2,14 +2,12 @@ import axios, { AxiosResponse } from 'axios';
 import { NewSong, Song, SongResponse } from '../../models/Song';
 
 
-const instance = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL,
-  adapter: [
-    "xhr",
-    "http"
-  ]
-});
+const apiBaseUrl = import.meta.env.VITE_APP_API_URL;
 
+const instance = axios.create({
+  baseURL: apiBaseUrl,
+  adapter: ["xhr", "http"],
+});
 
 export const api = {
   fetchSongs: async (): Promise<SongResponse[]> => {

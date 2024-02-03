@@ -1,12 +1,11 @@
 import axios, { AxiosResponse } from 'axios';
 import { TotalStats, GenreStats, ArtistStats, AlbumStats } from '../../models/Stat';
 
+const apiBaseUrl = import.meta.env.VITE_APP_API_URL;
+
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL,
-  adapter: [
-    "xhr",
-    "http"
-  ]
+  baseURL: apiBaseUrl,
+  adapter: ["xhr", "http"],
 });
 
 
